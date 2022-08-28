@@ -37,6 +37,8 @@ exports.parseWCBuffer = (buf, options) => {
   
 	if (buf.length == 1446) { // BOSS
 		return parseWCFullData(buf.slice(662), options);
+  } else if (buf.length == 720) { // WC8
+		return parseWC8Data(buf.slice(720), options);
   } else if (((buf.slice(662).length % 784 == 0)) & (buf.length > 1446)) { // multi-BOSS
 		return parseMultiWCFullData(buf.slice(662), options);
 	} else if (buf.length == 784) { // wcfull

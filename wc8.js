@@ -51,10 +51,11 @@ function parseWC8Data (buf, options) {
     }
     
     data.wcId = buf.readUInt16LE(0x08);
-    data.wcTitle = "";
+    data.wcTitle = "Title Test";
     
     document.getElementById("wcTitle").innerHTML = data.wcTitle;
     data.dateReceived = 0;
+    data.cardText = "Card Text Test";
     document.getElementById("cardText").innerHTML = data.cardText;
      
 

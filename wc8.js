@@ -187,9 +187,9 @@ function parseWC8Data (buf, options) {
     //document.getElementById("pkmnItem").className = data.heldItem;
     document.getElementById("pkmnItem").className = itemCheck();
     function itemCheck() {
-        if (buf.readUInt16LE(0x22E) == 0)
+        if (buf.readUInt16LE(0x22E) == "0")
         {
-        return "";
+            return "";
         }
         else
             return "spr-item-" + buf.readUInt16LE(0x22E);

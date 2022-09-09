@@ -628,21 +628,21 @@ function parseWC8Data (buf, options) {
   //    else 
   //      return "/regular/";
   //  } 
-  //document.getElementById("pkmnSpecies").className = "spr-box" + " spr-box-" + data.dexNo + formCheck() + " " + shinyCheckAgain();
-  //  function shinyCheckAgain() {
+  document.getElementById("pkmnSpecies").className = "spr-box" + " spr-box-" + data.dexNo + formCheck() + " " + shinyCheckAgain();
+   function shinyCheckAgain() {
   //    if (data.pidId == 2) {
   //      return "spr-shiny";
   //    }
   //    else 
-  //      return "spr-regular";
-  //  } 
-  //  function formCheck() {
+        return "spr-regular";
+    } 
+    function formCheck() {
   //    if (!data.formId == 0) {
   //      return ("-" + data.formId);
   //    }
   //    else
-  //      return ""
-  //  }
+        return ""
+    }
 
   //if (data.wcType == "wc6") {
   //  var gen7exclusive = document.getElementsByClassName("extragen7");

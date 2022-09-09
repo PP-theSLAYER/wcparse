@@ -153,7 +153,7 @@ function parseWC8Data (buf, options) {
   //      else
   //        return ribbonName67B[buf.readUInt8(0x75)];
   //    }
-  //    document.getElementById("Ribbon").innerHTML = data.Ribbon;   
+     document.getElementById("Ribbon").innerHTML = data.Ribbon;   
   //  document.getElementById("pkmnRibbon").className = "ribbon67-" + ribbonAB() + ribbonType();
   //    function ribbonAB() {
   //      if (!buf.readUInt8(0x74) == 0) {

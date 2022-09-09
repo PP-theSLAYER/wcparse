@@ -178,16 +178,18 @@ function parseWC8Data (buf, options) {
     data.ball = ballName[buf.readUInt8(0x22C)];  
     document.getElementById("ball").innerHTML = data.ball;
     document.getElementById("pkmnBall").className = "spr-ball-" + buf.readUInt8(0x22C);
-    data.heldItem = itemName[buf.readUInt16LE(0x22e)];
-   document.getElementById("heldItem").innerHTML = data.heldItem;
-   document.getElementById("pkmnItem").className = itemCheck();
-   function itemCheck() {
-   if (buf.readUInt16LE(0x22E) == 0) {
-        return "";
-   }
-   else
-        return "spr-item-" + buf.readUInt16LE(0x22E);
-   }
+
+    data.heldItem = itemName[buf.readUInt16LE(0x22E)];
+    document.getElementById("heldItem").innerHTML = data.heldItem;
+    document.getElementById("pkmnItem").className = data.heldItem;
+   //document.getElementById("pkmnItem").className = itemCheck();
+   //function itemCheck() {
+   //if (buf.readUInt16LE(0x22E) == 0) {
+   //     return "";
+   //}
+   //else
+   //     return "spr-item-" + buf.readUInt16LE(0x22E);
+   //}
   //  data.move1Name = moveName[buf.readUInt16LE(0x7A)];
   //    document.getElementById("move1Name").innerHTML = data.move1Name;
   //  data.move2Name = moveName[buf.readUInt16LE(0x7C)];  

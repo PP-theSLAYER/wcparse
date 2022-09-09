@@ -49,33 +49,14 @@ function parseWC8Data (buf, options) {
     function wcType() {
         return "wc8"
     }
-    // function wcType() {
-    //  if ((document.getElementById('input').value.slice(-4) == ".wc6") || (document.getElementById('input').value.slice(-8) == ".wc6full")) {
-    //    return "wc6";
-    //  }
-    //  else
-    //    return "wc7"; 
-    //} // I'm just assuming nobody has BOSS files for wc6s anymore
-  
+    
     data.wcId = buf.readUInt16LE(0x08);
     data.wcTitle = "";
-
-    // S-I'll deal with this later
-
-  //// data.wcTitle = stripNullChars(buf.toString('utf16le', 0x02, 0x4B));
-  //document.getElementById("wcTitle").innerHTML = data.wcTitle;
-  //data.dateReceived = buf.readUInt32LE(0x4C);
-  //data.cardText = cardText();
-  ////  function cardText() {
-  ////  if (data.wcType == "wc7") {
-  ////    return cardText7[buf.readUInt8(0x50)];
-  ////  }
-  ////  else
-  ////    return cardText6[buf.readUInt8(0x50)]
-  ////}
-  //document.getElementById("cardText").innerHTML = data.cardText;
-
-    document.getElementById("cardText").innerHTML = "Test01"
+    
+    document.getElementById("wcTitle").innerHTML = data.wcTitle;
+    data.dateReceived = 0;
+    document.getElementById("cardText").innerHTML = data.cardText;
+     
 
     data.cardType = ['None', 'Pokemon', 'Item', 'BP', 'Clothing'][buf.readUInt8(0x11)];
   data.giftType = giftType();
@@ -102,12 +83,9 @@ function parseWC8Data (buf, options) {
   data.cardColorId = 0;  
   data.cardColor = cardColor();
   function cardColor() {
-  //  if (data.wcType == "wc7") {
-      return 'Blue';
+        return 'Blue';
    }
-  //  else
-  //    return ['Blue', 'Green'][buf.readUInt8(0x53)]
-  //}
+ 
 
   document.querySelector("header").style.background = wcBackground();
     function wcBackground() {
@@ -149,12 +127,10 @@ function parseWC8Data (buf, options) {
         return pad(buf.readUInt32LE(0x20).toString().slice(-6),6)
     }
     document.getElementById("idNo").innerHTML = data.idNo;
-
-  //  if (data.wcType == "wc7") {
+  
     data.fullId = buf.readUInt32LE(0x20);
     data.tid = buf.readUInt16LE(0x20)
-  //  }
-      
+       
     data.sid = buf.readUInt16LE(0x22);
     data.originGameId = buf.readUInt16LE(0x24);
     data.encryptionConstant = ecSet();
@@ -216,8 +192,8 @@ function parseWC8Data (buf, options) {
   //    document.getElementById("move3Name").innerHTML = data.move3Name;
   //  data.move4Name = moveName[buf.readUInt16LE(0x80)];  
   //    document.getElementById("move4Name").innerHTML = data.move4Name;
-  //  data.dexNo = buf.readUInt16LE(0x82);
-  //  data.pokemonName = pokemonName[buf.readUInt16LE(0x82)];
+    data.dexNo = buf.readUInt16LE(0x240);
+    data.pokemonName = pokemonName[buf.readUInt16LE(0x240)];
   //    document.getElementById("pokemonName").innerHTML = data.pokemonName;
   //  data.formId = buf.readUInt8(0x84);
   //  data.formName = hasForm();

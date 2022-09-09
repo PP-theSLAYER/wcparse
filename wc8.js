@@ -237,9 +237,11 @@ function parseWC8Data (buf, options) {
     data.nature = natureType();
     function natureType()
     {
-        if (buf.readUInt8(0x246) == "0xFF") {
+        if (buf.readUInt8(0x246) == "0xFF")
+        {
             return "Random";
-    }
+
+        }
         else
             return "";
     }

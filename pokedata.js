@@ -904,7 +904,7 @@ const pokemonName = [
     "Basculegion",
     "Sneasler",
     "Overqwil",
-    "Enamorus"
+//    "Enamorus"
 ];
 
 'use strict';

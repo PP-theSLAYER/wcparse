@@ -173,8 +173,8 @@ function parseWC8Data (buf, options) {
   //      document.getElementById("pkmnRibbon").className = "";
   //    }
     
-  //  data.ball = ballName[buf.readUInt8(0x76)];  
-  //    document.getElementById("ball").innerHTML = data.ball;
+  data.ball = ballName[buf.readUInt8(0x22C)];  
+      document.getElementById("ball").innerHTML = data.ball;
   //  document.getElementById("pkmnBall").className = "spr-ball-" + buf.readUInt8(0x76);
   //  data.heldItem = itemName[buf.readUInt16LE(0x78)];
   //    document.getElementById("heldItem").innerHTML = data.heldItem;

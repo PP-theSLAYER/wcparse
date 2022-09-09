@@ -238,7 +238,7 @@ function parseWC8Data (buf, options) {
     data.nature = natureType();
     function natureType()
     {
-        if (buf.readUInt8(0x246) == 255)
+        if (buf.readUInt8(0x246) == "0xFF")
         {
             return "Random";
 
@@ -247,15 +247,15 @@ function parseWC8Data (buf, options) {
             return "";
     }
     document.getElementById("nature").innerHTML = data.nature;
-    //  data.natureLock = natureLock();
-    //  function natureLock() {
-    //    if (buf.readUInt8(0xA0) < "0xFF") {
-    //      return natureName[buf.readUInt8(0xA0)];
-    //    }
-    //    else
-    //      return "";
-    //  }
-    //  document.getElementById("natureLock").innerHTML = data.natureLock;
+    data.natureLock = natureLock();
+    function natureLock() {
+        if (buf.readUInt8(0x246) < "0xFF") {
+            return natureName[buf.readUInt8(0xA0)];
+        }
+        else
+            return "";
+    }
+    document.getElementById("natureLock").innerHTML = data.natureLock;
     //  data.gender = ['♂', '♀', 'Genderless', 'Random'][buf.readUInt8(0xA1)]; 
     //    document.getElementById("gender").innerHTML = data.gender;
     //    function genderColor() {

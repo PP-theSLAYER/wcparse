@@ -132,7 +132,7 @@ function parseWC8Data (buf, options) {
   
   //if (data.cardType == 'Pokemon') {
     
-  //  document.getElementById("pokemonbox").style.display = "block";
+   document.getElementById("pokemonbox").style.display = "block";
   //  document.getElementById("itembox").style.display = "none";
     
   //  data.idNo = idNo();

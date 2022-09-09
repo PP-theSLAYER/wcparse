@@ -138,7 +138,9 @@ function parseWC8Data (buf, options) {
       if (!buf.readUInt32LE(0x24) == "0x00000000") {
         return ( ((buf.readUInt32LE(0x24)).toString(16)));
       }
-    }  
+    }
+
+    data.Ribbon = "Classic Ribbon"; //Will fix this
   //  data.Ribbon = ribbonInfo();
   //    document.getElementById("Ribbon").innerHTML = data.Ribbon;
   //    function ribbonInfo() {

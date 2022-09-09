@@ -77,7 +77,7 @@ function parseWC8Data (buf, options) {
 
     document.getElementById("cardText").innerHTML = "Test01"
 
-    data.cardType = ['Pokemon', 'Item'][buf.readUInt8(0x11)];
+    data.cardType = ['None', 'Pokemon', 'Item', 'BP', 'Clothing'][buf.readUInt8(0x11)];
   data.giftType = giftType();
   function giftType() {
     if (buf.readUInt8(0x11) >= "0x07") {
@@ -136,34 +136,33 @@ function parseWC8Data (buf, options) {
   //if (data.cardType == 'Pokemon') {
     
    document.getElementById("pokemonbox").style.display = "block";
-  //  document.getElementById("itembox").style.display = "none";
-    
-  //  data.idNo = idNo();
-  //  function idNo() {
-  //    if (buf.readUInt32LE(0x68) == 0) {
-  //      return "Yours";
-  //    }
-  //    else if (data.wcType == "wc6") {
-  //      return pad(buf.readUInt16LE(0x68),5);
-  //    }
-  //    else 
-  //      return pad(buf.readUInt32LE(0x68).toString().slice(-6),6)
-  //  }
-  //  document.getElementById("idNo").innerHTML = data.idNo;
+    document.getElementById("itembox").style.display = "none";
+
+    // S-TID
+    data.idNo = idNo();
+    function idNo() {
+      if (buf.readUInt32LE(0x20) == 0) {
+        return "Yours";
+      }
+     
+      else 
+        return pad(buf.readUInt32LE(0x20).toString().slice(-6),6)
+    }
+    document.getElementById("idNo").innerHTML = data.idNo;
 
   //  if (data.wcType == "wc7") {
-  //  data.fullId = buf.readUInt32LE(0x68);
-  //  data.tid = buf.readUInt16LE(0x68)
+    data.fullId = buf.readUInt32LE(0x20);
+    data.tid = buf.readUInt16LE(0x20)
   //  }
       
-  //  data.sid = buf.readUInt16LE(0x6A);
-  //  data.originGameId = buf.readUInt16LE(0x6C);
-  //  data.encryptionConstant = ecSet();
-  //  function ecSet() {
-  //    if (!buf.readUInt32LE(0x70) == "0x00000000") {
-  //      return ( ((buf.readUInt32LE(0x70)).toString(16)));
-  //    }
-  //  }  
+    data.sid = buf.readUInt16LE(0x22);
+    data.originGameId = buf.readUInt16LE(0x24);
+    data.encryptionConstant = ecSet();
+    function ecSet() {
+      if (!buf.readUInt32LE(0x24) == "0x00000000") {
+        return ( ((buf.readUInt32LE(0x24)).toString(16)));
+      }
+    }  
   //  data.Ribbon = ribbonInfo();
   //    document.getElementById("Ribbon").innerHTML = data.Ribbon;
   //    function ribbonInfo() {

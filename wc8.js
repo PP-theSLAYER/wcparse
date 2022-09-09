@@ -175,7 +175,7 @@ function parseWC8Data (buf, options) {
     
   data.ball = ballName[buf.readUInt8(0x22C)];  
       document.getElementById("ball").innerHTML = data.ball;
-  //  document.getElementById("pkmnBall").className = "spr-ball-" + buf.readUInt8(0x76);
+    document.getElementById("pkmnBall").className = "spr-ball-" + buf.readUInt8(0x22C);
   //  data.heldItem = itemName[buf.readUInt16LE(0x78)];
   //    document.getElementById("heldItem").innerHTML = data.heldItem;
   //    document.getElementById("pkmnItem").className = itemCheck();

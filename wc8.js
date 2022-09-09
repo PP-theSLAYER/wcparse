@@ -267,7 +267,7 @@ function parseWC8Data (buf, options) {
     data.nature = natureLock();
     function natureLock()
     {
-        if (buf.readUInt8(0x246) < 255)
+        if (buf.readUInt8(0x246) < "0xFF")
         {
             return natureName[buf.readUInt8(0x246)];
         }

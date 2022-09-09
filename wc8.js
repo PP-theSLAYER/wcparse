@@ -156,24 +156,24 @@ function parseWC8Data (buf, options) {
   //        return ribbonName67B[buf.readUInt8(0x75)];
   //    }
      document.getElementById("Ribbon").innerHTML = data.Ribbon;   
-  //  document.getElementById("pkmnRibbon").className = "ribbon67-" + ribbonAB() + ribbonType();
-  //    function ribbonAB() {
-  //      if (!buf.readUInt8(0x74) == 0) {
-  //        return "a"
-  //      }
-  //      else
-  //        return "b"
-  //    }
-  //    function ribbonType() {
-  //      if (ribbonAB() == "a") {
-  //        return buf.readUInt8(0x74);
-  //      }
-  //      else
-  //        return buf.readUInt8(0x75)
-  //    }
-  //    if ((buf.readUInt8(0x74) == 0) && (buf.readUInt8(0x75) == 0)) {
-  //      document.getElementById("pkmnRibbon").className = "";
-  //    }
+    document.getElementById("pkmnRibbon").className = "ribbon67-" + ribbonAB() + ribbonType();
+      function ribbonAB() {
+        if (!buf.readUInt8(0x74) == 0) {
+          return "a"
+        }
+        else
+          return "b"
+      }
+      function ribbonType() {
+        if (ribbonAB() == "a") {
+          return buf.readUInt8(0x74);
+        }
+        else
+          return buf.readUInt8(0x75)
+      }
+      if ((buf.readUInt8(0x74) == 0) && (buf.readUInt8(0x75) == 0)) {
+        document.getElementById("pkmnRibbon").className = "";
+      }
     
   data.ball = ballName[buf.readUInt8(0x22C)];  
       document.getElementById("ball").innerHTML = data.ball;

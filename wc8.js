@@ -135,12 +135,14 @@ function parseWC8Data (buf, options) {
     data.sid = buf.readUInt16LE(0x22);
     data.originGameId = buf.readUInt16LE(0x24);
     //data.encryptionConstant = 0;
-    data.encryptionConstant = ((buf.readUInt32LE(0x24)).toString(16));
-    //function ecSet() {
-    //  if (!buf.readUInt32LE(0x24) == "0x00000000") {
-    //    return ( ((buf.readUInt32LE(0x24)).toString(16)));
-    //  }
-    //}
+    //data.encryptionConstant = ((buf.readUInt32LE(0x24)).toString(16));
+    data.encryptionConstant = ecSet();
+    function ecSet()
+    {
+      if (!buf.readUInt32LE(0x24) == "0x00000000") {
+        return ( ((buf.readUInt32LE(0x24)).toString(16)));
+      }
+    }
 
     data.Ribbon = "Classic Ribbon"; //Will fix this
   //  data.Ribbon = ribbonInfo();

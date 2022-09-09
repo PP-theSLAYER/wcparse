@@ -653,6 +653,7 @@ function parseWC8Data (buf, options) {
     //    gen7exclusive[i].style.display = 'block';
     //  }
     //}
+
   
     return data;
   

@@ -59,6 +59,9 @@ function parseWC8Data (buf, options) {
   
     data.wcId = buf.readUInt16LE(0x08);
     data.wcTitle = "";
+
+    // S-I'll deal with this later
+
   //// data.wcTitle = stripNullChars(buf.toString('utf16le', 0x02, 0x4B));
   //document.getElementById("wcTitle").innerHTML = data.wcTitle;
   //data.dateReceived = buf.readUInt32LE(0x4C);
@@ -71,7 +74,10 @@ function parseWC8Data (buf, options) {
   ////    return cardText6[buf.readUInt8(0x50)]
   ////}
   //document.getElementById("cardText").innerHTML = data.cardText;
-  data.cardType = ['Pokemon', 'Item'][buf.readUInt8(0x11)]; 
+
+    document.getElementById("cardText").innerHTML = "Test01"
+
+    data.cardType = ['Pokemon', 'Item'][buf.readUInt8(0x11)];
   data.giftType = giftType();
   function giftType() {
     if (buf.readUInt8(0x11) >= "0x07") {
@@ -92,13 +98,13 @@ function parseWC8Data (buf, options) {
       document.getElementById("giftRedeemable").style.color = "#000";
       document.getElementById("giftRedeemable").style.fontWeight = "normal";
     }
-  //data.giftStatus = ['Unused', 'Unused', 'Used', 'Used', 'Unused', '???', 'Used'][buf.readUInt8(0x52)];
-  //data.cardColorId = buf.readUInt8(0x53);  
-  //data.cardColor = cardColor();
-  //function cardColor() {
+  data.giftStatus = "Unused";
+  data.cardColorId = 0;  
+  data.cardColor = cardColor();
+  function cardColor() {
   //  if (data.wcType == "wc7") {
-  //    return ['Blue', 'Purple', 'Yellow'][buf.readUInt8(0x53)];
-  //  }
+      return 'Blue';
+   }
   //  else
   //    return ['Blue', 'Green'][buf.readUInt8(0x53)]
   //}

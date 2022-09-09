@@ -5,12 +5,13 @@ Parses and displays information from wondercard files from the Pokémon games.
 ![Screenshot](/img/screenshot.png?raw=true "Screenshot")
 
 Currently supports the following file types:
-
+- an attempt at WC8
 - wc6/wc7
 - wc6full/wc7full
 - Decrypted Gen 7 BOSS
 - wc5/pgf
 - wc4/pcd/pgt (the non-encrypted parts)
+[WB8 and WA8 isn't support at the moment]
 
 If you don't have the file for the wondercard you want to view, you should be able to find it [here at Project Pokémon's Event Gallery](https://github.com/projectpokemon/EventsGallery).
 
@@ -23,7 +24,7 @@ If you extract your wondercard, or download one from elsewhere, you might be cur
 wcparse answers all of these questions and more. Open the wondercard file in wcparse, and you'll see all the information it contains. Its display is designed to be appealing, compact, and adaptable to different file types, making it easy to screenshot and share the information with others. Or you can view the full JSON output, if you're looking for even more details.
 
 ### Credits
-
+- Kirzi's wcparse (Like literally everything. EVERYTHING)
 - Porybox's [pkparse](https://github.com/porybox/pkparse) for part of the code
 - [Pokesprite](https://github.com/msikma/pokesprite) for sprites
 - Project Pokémon's research on wondercard structure

@@ -258,7 +258,7 @@ function parseWC8Data (buf, options) {
             return "";
     }
     document.getElementById("natureLock").innerHTML = data.natureLock;
-    if (data.natureLock == "")
+    if (data.nature == "")
     {
         data.nature = data.natureLock;
     }

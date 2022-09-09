@@ -139,8 +139,9 @@ function parseWC8Data (buf, options) {
     data.encryptionConstant = ecSet();
     function ecSet()
     {
-        if (!buf.readUInt32LE(0x24) == "0x00000000") {
-        return ( ((buf.readUInt32LE(0x24)).toString(16)));
+        if (!buf.readUInt32LE(0x24) == "0x00000000")
+        {
+            return (((buf.readUInt32LE(0x24)).toString(16)));
         }
     }
 

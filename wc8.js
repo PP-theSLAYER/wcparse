@@ -212,7 +212,7 @@ function parseWC8Data (buf, options) {
     data.dexNo = buf.readUInt16LE(0x240);
 
     data.pokemonName = pokemonName[buf.readUInt16LE(0x240)];
-    //    document.getElementById("pokemonName").innerHTML = data.pokemonName;
+    document.getElementById("pokemonName").innerHTML = data.pokemonName;
     //  data.formId = buf.readUInt8(0x84);
     //  data.formName = hasForm();
     //    function hasForm() {
@@ -223,7 +223,7 @@ function parseWC8Data (buf, options) {
     //        return "None";
     //    }
     //    document.getElementById("formName").innerHTML = data.formName;
-    //  data.language = ['Yours', 'JPN', 'ENG', 'FRE', 'ITA', 'GER', '???', 'SPA', 'KOR', 'CHS', 'CHT'][buf.readUInt8(0x85)]; 
+    //data.language = ['Yours', 'JPN', 'ENG', 'FRE', 'ITA', 'GER', '???', 'SPA', 'KOR', 'CHS', 'CHT'][buf.readUInt8(0x85)]; 
     //  document.getElementById("language").innerHTML = data.language;
     //  data.nickname = nicknameName();
     //  function nicknameName() {
@@ -234,15 +234,15 @@ function parseWC8Data (buf, options) {
     //      return "None";
     //  }
     //  document.getElementById("nickname").innerHTML = data.nickname;
-    //  data.nature = natureType();
-    //  function natureType() {
-    //    if (buf.readUInt8(0xA0) == "0xFF") {
-    //      return "Random";
-    //    }
-    //    else
-    //      return "";
-    //  }
-    //  document.getElementById("nature").innerHTML = data.nature;
+    data.nature = natureType();
+        function natureType() {
+        if (buf.readUInt8(0x246) == "0xFF") {
+            return "Random";
+        }
+        else
+            return "";
+        }
+        document.getElementById("nature").innerHTML = data.nature;
     //  data.natureLock = natureLock();
     //  function natureLock() {
     //    if (buf.readUInt8(0xA0) < "0xFF") {

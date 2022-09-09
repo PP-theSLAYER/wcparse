@@ -262,7 +262,7 @@ function parseWC8Data (buf, options) {
     {
         data.nature = data.natureLock;
     }
-
+    document.getElementById("nature").innerHTML = data.nature;
     //  data.gender = ['♂', '♀', 'Genderless', 'Random'][buf.readUInt8(0xA1)]; 
     //    document.getElementById("gender").innerHTML = data.gender;
     //    function genderColor() {

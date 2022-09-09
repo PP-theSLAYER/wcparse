@@ -235,19 +235,36 @@ function parseWC8Data (buf, options) {
     //      return "None";
     //  }
     //  document.getElementById("nickname").innerHTML = data.nickname;
-    data.nature = natureType();
-    function natureType()
-    {
-        if (buf.readUInt8(0x246) == "0xFF")
-        {
-            return "Random";
+    //data.nature = natureType();
+    //function natureType()
+    //{
+    //    if (buf.readUInt8(0x246) == "0xFF")
+    //    {
+    //        return "Random";
 
-        }        
-        else
-            return "";
-    }
-    document.getElementById("nature").innerHTML = data.nature;
-    data.natureLock = natureLock();
+    //    }        
+    //    else
+    //        return "";
+    //}
+    //document.getElementById("nature").innerHTML = data.nature;
+    //data.natureLock = natureLock();
+    //function natureLock()
+    //{
+    //    if (buf.readUInt8(0x246) < 255)
+    //    {
+    //        return natureName[buf.readUInt8(0x246)];
+    //    }
+    //    else
+    //        return "";
+    //}
+    //document.getElementById("natureLock").innerHTML = data.natureLock;
+    //if (data.nature == "")
+    //{
+    //    data.nature = data.natureLock;
+    //}
+    //document.getElementById("nature").innerHTML = data.nature;
+
+    data.nature = natureLock();
     function natureLock()
     {
         if (buf.readUInt8(0x246) < 255)
@@ -255,14 +272,10 @@ function parseWC8Data (buf, options) {
             return natureName[buf.readUInt8(0x246)];
         }
         else
-            return "";
-    }
-    document.getElementById("natureLock").innerHTML = data.natureLock;
-    if (data.nature == "")
-    {
-        data.nature = data.natureLock;
+            return "Random";
     }
     document.getElementById("nature").innerHTML = data.nature;
+
     //  data.gender = ['♂', '♀', 'Genderless', 'Random'][buf.readUInt8(0xA1)]; 
     //    document.getElementById("gender").innerHTML = data.gender;
     //    function genderColor() {

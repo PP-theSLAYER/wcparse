@@ -235,14 +235,15 @@ function parseWC8Data (buf, options) {
     //  }
     //  document.getElementById("nickname").innerHTML = data.nickname;
     data.nature = natureType();
-        function natureType() {
+    function natureType()
+    {
         if (buf.readUInt8(0x246) == "0xFF") {
             return "Random";
-        }
+    }
         else
             return "";
-        }
-        document.getElementById("nature").innerHTML = data.nature;
+    }
+    document.getElementById("nature").innerHTML = data.nature;
     //  data.natureLock = natureLock();
     //  function natureLock() {
     //    if (buf.readUInt8(0xA0) < "0xFF") {

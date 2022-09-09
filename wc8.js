@@ -195,12 +195,12 @@ function parseWC8Data (buf, options) {
         }
     data.move1Name = moveName[buf.readUInt16LE(0x230)];
       document.getElementById("move1Name").innerHTML = data.move1Name;
-    data.move2Name = moveName[buf.readUInt16LE(0x232)];  
-      document.getElementById("move2Name").innerHTML = data.move2Name;
-    data.move3Name = moveName[buf.readUInt16LE(0x234)];
-      document.getElementById("move3Name").innerHTML = data.move3Name;
-    data.move4Name = moveName[buf.readUInt16LE(0x236)];  
-      document.getElementById("move4Name").innerHTML = data.move4Name;
+    //data.move2Name = moveName[buf.readUInt16LE(0x232)];  
+    //  document.getElementById("move2Name").innerHTML = data.move2Name;
+    //data.move3Name = moveName[buf.readUInt16LE(0x234)];
+    //  document.getElementById("move3Name").innerHTML = data.move3Name;
+    //data.move4Name = moveName[buf.readUInt16LE(0x236)];  
+    //  document.getElementById("move4Name").innerHTML = data.move4Name;
     data.dexNo = buf.readUInt16LE(0x240);
     data.pokemonName = pokemonName[buf.readUInt16LE(0x240)];
   //    document.getElementById("pokemonName").innerHTML = data.pokemonName;

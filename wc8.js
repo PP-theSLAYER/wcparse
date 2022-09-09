@@ -71,27 +71,27 @@ function parseWC8Data (buf, options) {
   ////    return cardText6[buf.readUInt8(0x50)]
   ////}
   //document.getElementById("cardText").innerHTML = data.cardText;
-  //data.cardType = ['Pokemon', 'Item'][buf.readUInt8(0x51)]; 
-  //data.giftType = giftType();
-  //function giftType() {
-  //  if (buf.readUInt8(0x52) >= "0x07") {
-  //    return "Unknown"; // futureproofing
-  //  }
-  //}
-  //data.giftRedeemable = ['May be infinite', 'Only once', 'May be infinite', 'Only once', 'Once per day', '???', 'Once per day'][buf.readUInt8(0x52)];
-  //  document.getElementById("giftRedeemable").innerHTML = data.giftRedeemable;
-  //  if (data.giftRedeemable === 'May be infinite') {
-  //    document.getElementById("giftRedeemable").style.color = "#009688";
-  //    document.getElementById("giftRedeemable").style.fontWeight = "bold";
-  //  }
-  //  else if (data.giftRedeemable === 'Once per day') {
-  //    document.getElementById("giftRedeemable").style.color = "#673AB7";
-  //    document.getElementById("giftRedeemable").style.fontWeight = "bold";
-  //  }
-  //  else {
-  //    document.getElementById("giftRedeemable").style.color = "#000";
-  //    document.getElementById("giftRedeemable").style.fontWeight = "normal";
-  //  }
+  data.cardType = ['Pokemon', 'Item'][buf.readUInt8(0x11)]; 
+  data.giftType = giftType();
+  function giftType() {
+    if (buf.readUInt8(0x11) >= "0x07") {
+      return "Unknown"; // futureproofing
+  }
+ }
+  data.giftRedeemable = ['May be infinite', 'Only once', 'May be infinite', 'Only once', 'Once per day', '???', 'Once per day'][buf.readUInt8(0x10)];
+    document.getElementById("giftRedeemable").innerHTML = data.giftRedeemable;
+    if (data.giftRedeemable === 'May be infinite') {
+      document.getElementById("giftRedeemable").style.color = "#009688";
+      document.getElementById("giftRedeemable").style.fontWeight = "bold";
+    }
+    else if (data.giftRedeemable === 'Once per day') {
+      document.getElementById("giftRedeemable").style.color = "#673AB7";
+      document.getElementById("giftRedeemable").style.fontWeight = "bold";
+    }
+    else {
+      document.getElementById("giftRedeemable").style.color = "#000";
+      document.getElementById("giftRedeemable").style.fontWeight = "normal";
+    }
   //data.giftStatus = ['Unused', 'Unused', 'Used', 'Used', 'Unused', '???', 'Used'][buf.readUInt8(0x52)];
   //data.cardColorId = buf.readUInt8(0x53);  
   //data.cardColor = cardColor();

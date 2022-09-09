@@ -139,7 +139,7 @@ function parseWC8Data (buf, options) {
     data.encryptionConstant = ecSet();
     function ecSet()
     {
-        if (!buf.readUInt32LE(0x24) == "0x00000000") {
+        if (!buf.readUInt32LE(0x24) == 0x00000000) {
         return ( ((buf.readUInt32LE(0x24)).toString(16)));
         }
     }
@@ -237,7 +237,7 @@ function parseWC8Data (buf, options) {
     data.nature = natureType();
     function natureType()
     {
-        if (buf.readUInt8(0x246) == "0xFF")
+        if (buf.readUInt8(0x246) == 0xFF)
         {
             return "Random";
 

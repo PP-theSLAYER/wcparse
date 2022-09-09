@@ -258,6 +258,11 @@ function parseWC8Data (buf, options) {
             return "";
     }
     document.getElementById("natureLock").innerHTML = data.natureLock;
+    if (data.natureLock == "")
+    {
+        data.nature = data.natureLock;
+    }
+
     //  data.gender = ['♂', '♀', 'Genderless', 'Random'][buf.readUInt8(0xA1)]; 
     //    document.getElementById("gender").innerHTML = data.gender;
     //    function genderColor() {

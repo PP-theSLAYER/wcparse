@@ -109,32 +109,29 @@ function parseWC8Data (buf, options) {
   //    return ['Blue', 'Green'][buf.readUInt8(0x53)]
   //}
 
-  //document.querySelector("header").style.background = wcBackground();
-  //  function wcBackground() {
-  //    if (data.wcType == "wc7") {
-  //      if (data.cardColorId == 0) {
-  //        return "#34BAC4"; // blue
-  //      }
-  //      else if (data.cardColorId == 1) {
-  //        return "#7F49BB"; // purple
-  //      }
-  //      else if (data.cardColorId == 2) {
-  //        return "#f6fa29"; // yellow
-  //      }
-  //      else
-  //        return "#222"; // futureproofing
-  //    }
-  //    else if (data.wcType == "wc6") {
-  //        return "#0759A5"; // blue
-  //    } // I'm making all wc6s display in the frontend as blue since the green only shows up during redemption
-  //  }
+  document.querySelector("header").style.background = wcBackground();
+    function wcBackground() {
+      if (data.wcType == "wc8") {
+        if (data.cardColorId == 0) {
+          return "#34BAC4"; // blue
+        }
+        else if (data.cardColorId == 1) {
+          return "#7F49BB"; // purple
+        }
+        else if (data.cardColorId == 2) {
+          return "#f6fa29"; // yellow
+        }
+        else
+          return "#222"; // futureproofing
+      }     
+    }
     
-  //  if (data.cardColorId == 2) {
-  //    document.getElementById("filename").style.color = "#000";
-  //  }
-  //  else {
-  //    document.getElementById("filename").style.color = "#fff";
-  //  }
+    if (data.cardColorId == 2) {
+      document.getElementById("filename").style.color = "#000";
+    }
+    else {
+      document.getElementById("filename").style.color = "#fff";
+    }
   
   //if (data.cardType == 'Pokemon') {
     

@@ -248,8 +248,10 @@ function parseWC8Data (buf, options) {
     }
     document.getElementById("nature").innerHTML = data.nature;
     data.natureLock = natureLock();
-    function natureLock() {
-        if (buf.readUInt8(0x246) < "0xFF") {
+    function natureLock()
+    {
+        if (buf.readUInt8(0x246) < "0xFF")
+        {
             return natureName[buf.readUInt8(0x246)];
         }
         else
